@@ -42,9 +42,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: Setup Composer Token
-        if: secrets.COMPOSER_TOKEN != ''
-        run: composer config github-oauth.github.com "${{ secrets.COMPOSER_TOKEN }}"
+# Needs crossplatform fix. #
+#      - name: Setup Composer Token
+#        if: secrets.COMPOSER_TOKEN != ''
+#        run: composer config github-oauth.github.com "${{ secrets.COMPOSER_TOKEN }}"
 
       - name: Install packages
         run: composer install --prefer-dist
