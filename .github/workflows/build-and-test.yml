@@ -42,11 +42,8 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Setup Composer Token
-        run: |
-          # To increase the Composer rate limit we're use GitHub authentication
-          if [ -n "${{ secrets.COMPOSER_TOKEN }}" ]; then
-            composer config github-oauth.github.com "${{ secrets.COMPOSER_TOKEN }}"
-          fi
+        if: secrets.COMPOSER_TOKEN != ''
+        run: composer config github-oauth.github.com "${{ secrets.COMPOSER_TOKEN }}"
 
       - name: Install packages
         run: composer install --prefer-dist
