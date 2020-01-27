@@ -23,6 +23,11 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Setup PHP
+          uses: shivammathur/setup-php@v1
+          with:
+            php-version: ${{ matrix.php-versions }}
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -42,11 +47,6 @@ jobs:
           if [ -n "${{ secrets.COMPOSER_TOKEN }}" ]; then
             composer config github-oauth.github.com "${{ secrets.COMPOSER_TOKEN }}"
           fi
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v1
-        with:
-          php-version: ${{ matrix.php-versions }}
 
       - name: Install packages
         run: composer install --prefer-dist
