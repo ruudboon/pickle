@@ -24,9 +24,9 @@ jobs:
           fetch-depth: 1
 
       - name: Setup PHP
-          uses: shivammathur/setup-php@v1
-          with:
-            php-version: ${{ matrix.php-versions }}
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: ${{ matrix.php-versions }}
 
       - name: Get Composer Cache Directory
         id: composer-cache
