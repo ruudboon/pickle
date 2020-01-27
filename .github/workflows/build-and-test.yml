@@ -50,11 +50,22 @@ jobs:
       - name: Install packages
         run: composer install --prefer-dist
 
-      - name: Install Phalcon
+      - name: Install package without dependency
+        if: runner.os != 'windows'
+        run: sudo install memcache
+
+      - name: Install package without dependency
+        if: runner.os == 'windows'
+        run: install memcache
+
+      - name: Verify install memcache
+        run: php --ri phalcon
+
+      - name: Install package with dependency
         if: runner.os != 'windows'
         run: sudo bin/pickle install phalcon
 
-      - name: Install Phalcon
+      - name: Install package with dependency
         if: runner.os == 'windows'
         run: bin/pickle install phalcon
 
