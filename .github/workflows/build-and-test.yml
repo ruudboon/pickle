@@ -52,11 +52,11 @@ jobs:
 
       - name: Install package without dependency
         if: runner.os != 'windows'
-        run: sudo install memcache
+        run: sudo bin/pickle install memcache
 
       - name: Install package without dependency
         if: runner.os == 'windows'
-        run: install memcache
+        run: bin/pickle install memcache
 
       - name: Verify install memcache
         run: php --ri phalcon
