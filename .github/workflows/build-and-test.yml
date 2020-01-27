@@ -52,7 +52,7 @@ jobs:
 
       - name: Install package without dependency
         if: runner.os != 'windows'
-        run: sudo bin/pickle install memcache
+        run: sudo bin/pickle install xdebug
 
       - name: Install package without dependency
         if: runner.os == 'windows'
