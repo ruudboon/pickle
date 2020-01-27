@@ -51,6 +51,11 @@ jobs:
         run: composer install --prefer-dist
 
       - name: Install Phalcon
+        if: runner.os != 'windows'
+        run: sudo bin/pickle install phalcon
+
+      - name: Install Phalcon
+        if: runner.os == 'windows'
         run: bin/pickle install phalcon
 
       - name: Verify install phalcon
