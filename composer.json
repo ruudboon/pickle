@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "ext-zlib": "*",
         "ext-mbstring": "*",
         "ext-simplexml": "*",
@@ -25,18 +25,18 @@
         "ext-dom": "*",
         "ext-openssl": "*",
         "ext-zip": "*",
-        "symfony/console": "~2.5",
+        "symfony/console": "^3.4",
         "justinrainbow/json-schema": "~1.5",
         "composer/composer": "~1.0-alpha8",
         "padraic/phar-updater": "~1.0@dev"
     },
     "require-dev": {
-        "atoum/atoum": "~2.1",
-        "atoum/praspel-extension": "~0.1",
-        "atoum/visibility-extension": "~1.0",
+        "atoum/atoum": "~3.4.1",
+        "atoum/praspel-extension": "^0.17.02",
+        "atoum/visibility-extension": "~1.3.0",
         "behat/behat": "~3.0",
-        "symfony/process": "~2.5",
-        "fabpot/php-cs-fixer": "~1.7"
+        "symfony/process": "^3.0",
+        "friendsofphp/php-cs-fixer": "~2.16"
     },
     "autoload": {
         "psr-4": {

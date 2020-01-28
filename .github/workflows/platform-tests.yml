@@ -50,6 +50,9 @@ jobs:
       - name: Install packages
         run: composer install --prefer-dist
 
+      - name: Run Atoum tests
+        run: vendor/bin/atoum
+
       - name: Install package without dependency
         if: runner.os != 'windows'
         run: sudo bin/pickle install swoole
