@@ -52,11 +52,11 @@ jobs:
 
       - name: Install package without dependency
         if: runner.os != 'windows'
-        run: sudo bin/pickle install xdebug
+        run: sudo bin/pickle install swoole
 
       - name: Install package without dependency
         if: runner.os == 'windows'
-        run: bin/pickle install xdebug
+        run: bin/pickle install swoole
 
       - name: Verify install memcache
         run: php --ri phalcon
