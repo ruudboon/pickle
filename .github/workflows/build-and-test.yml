@@ -58,8 +58,8 @@ jobs:
         if: runner.os == 'windows'
         run: bin/pickle install swoole
 
-      - name: Verify install memcache
-        run: php --ri phalcon
+      - name: Verify install swoole
+        run: php --ri swoole
 
       - name: Install package with dependency
         if: runner.os != 'windows'
