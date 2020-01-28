@@ -55,14 +55,14 @@ jobs:
 
       - name: Install package without dependency
         if: runner.os != 'windows'
-        run: sudo bin/pickle install swoole
+        run: sudo bin/pickle install uploadprogress
 
       - name: Install package without dependency
         if: runner.os == 'windows'
-        run: bin/pickle install swoole
+        run: bin/pickle install uploadprogress
 
-      - name: Verify install swoole
-        run: php --ri swoole
+      - name: Verify install uploadprogress
+        run: php --ri uploadprogress
 
       - name: Install package with dependency
         if: runner.os != 'windows'
